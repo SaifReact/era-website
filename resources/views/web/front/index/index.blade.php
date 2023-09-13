@@ -23,22 +23,32 @@ Welcome!
         data-src="{{ route('front.components.products') }}">
         @include('web.front.partials.ajax-loader-block')
     </div>
-    <!-- 
-        <div id="front-clients" class="ajax-lazy text-center" data-loader="ajax"
-        data-src="{{ route('front.components.clients') }}">
-        @include('web.front.partials.ajax-loader-block')
-    </div> 
--->
+
+
+    <div class="container" data-aos="fade-up">
+        <div class="row">
+            <div class="col-lg-6">
+                <div id="front-testimonials" class="ajax-lazy text-center" data-loader="ajax"
+                    data-src="{{ route('front.components.testimonials') }}">
+                    @include('web.front.partials.ajax-loader-block')
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div id="front-clients" class="ajax-lazy text-center" data-loader="ajax"
+                    data-src="{{ route('front.components.clients') }}">
+                    @include('web.front.partials.ajax-loader-block')
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- 
         <div id="front-portfolios" class="ajax-lazy text-center" data-loader="ajax"
         data-src="{{ route('front.components.portfolios') }}">
         @include('web.front.partials.ajax-loader-block')
     </div> 
 -->
-    <div id="front-testimonials" class="ajax-lazy text-center" data-loader="ajax"
-        data-src="{{ route('front.components.testimonials') }}">
-        @include('web.front.partials.ajax-loader-block')
-    </div>
+
+
     <div id="front-events" class="ajax-lazy text-center" data-loader="ajax"
         data-src="{{ route('front.components.events') }}">
         @include('web.front.partials.ajax-loader-block')
