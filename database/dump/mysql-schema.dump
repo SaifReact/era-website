@@ -1,0 +1,454 @@
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+DROP TABLE IF EXISTS `about_us`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `about_us` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `image` varchar(191) NOT NULL,
+  `title` varchar(191) NOT NULL,
+  `summary` text NOT NULL,
+  `url` varchar(191) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+DROP TABLE IF EXISTS `audits`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `audits` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `user_type` varchar(191) DEFAULT NULL,
+  `user_id` bigint unsigned DEFAULT NULL,
+  `event` varchar(191) NOT NULL,
+  `auditable_type` varchar(191) NOT NULL,
+  `auditable_id` bigint unsigned NOT NULL,
+  `old_values` text,
+  `new_values` text,
+  `url` text,
+  `ip_address` varchar(45) DEFAULT NULL,
+  `user_agent` varchar(1023) DEFAULT NULL,
+  `tags` varchar(191) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `audits_auditable_type_auditable_id_index` (`auditable_type`,`auditable_id`),
+  KEY `audits_user_id_user_type_index` (`user_id`,`user_type`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+DROP TABLE IF EXISTS `banners`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `banners` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `banner_image` varchar(191) NOT NULL,
+  `banner_text` varchar(191) DEFAULT NULL,
+  `button_text` varchar(191) DEFAULT NULL,
+  `button_url` text,
+  `order` bigint unsigned NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+DROP TABLE IF EXISTS `client_categories`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `client_categories` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `logo` varchar(191) DEFAULT NULL,
+  `category_name` varchar(191) NOT NULL,
+  `slug` varchar(191) DEFAULT NULL,
+  `order` bigint unsigned NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+DROP TABLE IF EXISTS `clients`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `clients` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `logo` varchar(191) NOT NULL,
+  `client_name` varchar(191) NOT NULL,
+  `url` varchar(191) DEFAULT NULL,
+  `order` bigint unsigned NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `client_category_id` bigint unsigned DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `clients_client_category_id_foreign` (`client_category_id`),
+  CONSTRAINT `clients_client_category_id_foreign` FOREIGN KEY (`client_category_id`) REFERENCES `client_categories` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+DROP TABLE IF EXISTS `company_infos`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `company_infos` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `logo_src` varchar(191) NOT NULL,
+  `logo_small_src` varchar(191) NOT NULL,
+  `logo_alt` text NOT NULL,
+  `root_url` varchar(191) NOT NULL,
+  `website_name` text NOT NULL,
+  `tagline` text,
+  `fax` varchar(191) DEFAULT NULL,
+  `phone` varchar(191) DEFAULT NULL,
+  `email` varchar(191) DEFAULT NULL,
+  `web` text,
+  `facebook` text,
+  `linkedin` text,
+  `company_summary` text,
+  `open_days` varchar(191) DEFAULT NULL,
+  `duration` varchar(191) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+DROP TABLE IF EXISTS `contacts`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `contacts` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `photo` varchar(191) DEFAULT NULL,
+  `person_name` varchar(191) DEFAULT NULL,
+  `designation` varchar(191) DEFAULT NULL,
+  `contact_no` varchar(191) NOT NULL,
+  `primary_contact` tinyint(1) NOT NULL DEFAULT '0',
+  `order` bigint unsigned NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+DROP TABLE IF EXISTS `email_configs`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `email_configs` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `active` tinyint(1) NOT NULL DEFAULT '0',
+  `mailer` varchar(191) NOT NULL,
+  `host` varchar(191) NOT NULL,
+  `port` varchar(191) NOT NULL,
+  `username` varchar(191) NOT NULL,
+  `password` varchar(191) NOT NULL,
+  `encryption` varchar(191) NOT NULL,
+  `from_address` varchar(191) NOT NULL,
+  `from_name` varchar(191) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+DROP TABLE IF EXISTS `events`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `events` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `title` varchar(191) NOT NULL,
+  `slug` varchar(191) DEFAULT NULL,
+  `meta` varchar(191) DEFAULT NULL,
+  `thumbnail` varchar(191) NOT NULL,
+  `image` varchar(191) NOT NULL,
+  `event_at` timestamp NOT NULL,
+  `teaser` text NOT NULL,
+  `detail` longtext NOT NULL,
+  `status` tinyint DEFAULT NULL,
+  `publish_at` timestamp NULL DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+DROP TABLE IF EXISTS `failed_jobs`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `failed_jobs` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `uuid` varchar(191) NOT NULL,
+  `connection` text NOT NULL,
+  `queue` text NOT NULL,
+  `payload` longtext NOT NULL,
+  `exception` longtext NOT NULL,
+  `failed_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `failed_jobs_uuid_unique` (`uuid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+DROP TABLE IF EXISTS `locations`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `locations` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `location_name` varchar(191) DEFAULT NULL,
+  `address` varchar(191) NOT NULL,
+  `map_location` text,
+  `lat` decimal(11,8) NOT NULL,
+  `lng` decimal(11,8) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+DROP TABLE IF EXISTS `management`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `management` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `photo` varchar(191) NOT NULL,
+  `person_name` varchar(191) NOT NULL,
+  `designation` varchar(191) NOT NULL,
+  `message` longtext NOT NULL,
+  `url` varchar(191) DEFAULT NULL,
+  `order` bigint unsigned NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+DROP TABLE IF EXISTS `market_concentrations`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `market_concentrations` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `image` varchar(191) NOT NULL,
+  `title` varchar(191) NOT NULL,
+  `order` bigint unsigned NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+DROP TABLE IF EXISTS `menu_items`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `menu_items` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(191) NOT NULL,
+  `slug` varchar(191) NOT NULL,
+  `external_url` varchar(191) DEFAULT NULL,
+  `target` varchar(191) DEFAULT NULL,
+  `level` bigint unsigned NOT NULL DEFAULT '0',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `menu_id` bigint unsigned DEFAULT NULL,
+  `page_id` bigint unsigned DEFAULT NULL,
+  `parent_id` bigint unsigned DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `menu_items_menu_id_foreign` (`menu_id`),
+  KEY `menu_items_page_id_foreign` (`page_id`),
+  KEY `menu_items_parent_id_foreign` (`parent_id`),
+  CONSTRAINT `menu_items_menu_id_foreign` FOREIGN KEY (`menu_id`) REFERENCES `menus` (`id`),
+  CONSTRAINT `menu_items_page_id_foreign` FOREIGN KEY (`page_id`) REFERENCES `pages` (`id`),
+  CONSTRAINT `menu_items_parent_id_foreign` FOREIGN KEY (`parent_id`) REFERENCES `menu_items` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+DROP TABLE IF EXISTS `menus`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `menus` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(191) NOT NULL,
+  `slug` varchar(191) NOT NULL,
+  `order` bigint unsigned NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `menus_name_unique` (`name`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+DROP TABLE IF EXISTS `migrations`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `migrations` (
+  `id` int unsigned NOT NULL AUTO_INCREMENT,
+  `migration` varchar(191) NOT NULL,
+  `batch` int NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+DROP TABLE IF EXISTS `pages`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `pages` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `title` varchar(191) NOT NULL,
+  `slug` varchar(191) DEFAULT NULL,
+  `content` longtext NOT NULL,
+  `meta` varchar(191) DEFAULT NULL,
+  `status` tinyint DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+DROP TABLE IF EXISTS `password_resets`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `password_resets` (
+  `email` varchar(191) NOT NULL,
+  `token` varchar(191) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  KEY `password_resets_email_index` (`email`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+DROP TABLE IF EXISTS `personal_access_tokens`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `personal_access_tokens` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `tokenable_type` varchar(191) NOT NULL,
+  `tokenable_id` bigint unsigned NOT NULL,
+  `name` varchar(191) NOT NULL,
+  `token` varchar(64) NOT NULL,
+  `abilities` text,
+  `last_used_at` timestamp NULL DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `personal_access_tokens_token_unique` (`token`),
+  KEY `personal_access_tokens_tokenable_type_tokenable_id_index` (`tokenable_type`,`tokenable_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+DROP TABLE IF EXISTS `portfolio_categories`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `portfolio_categories` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `logo` varchar(191) DEFAULT NULL,
+  `category_name` varchar(191) NOT NULL,
+  `slug` varchar(191) DEFAULT NULL,
+  `order` bigint unsigned NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+DROP TABLE IF EXISTS `portfolios`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `portfolios` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `thumbnail` varchar(191) NOT NULL,
+  `image` varchar(191) NOT NULL,
+  `name` varchar(191) NOT NULL,
+  `detail` longtext NOT NULL,
+  `order` bigint unsigned NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `portfolio_category_id` bigint unsigned DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `portfolios_portfolio_category_id_foreign` (`portfolio_category_id`),
+  CONSTRAINT `portfolios_portfolio_category_id_foreign` FOREIGN KEY (`portfolio_category_id`) REFERENCES `portfolio_categories` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+DROP TABLE IF EXISTS `products`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `products` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `logo` varchar(191) DEFAULT NULL,
+  `product_name` varchar(191) NOT NULL,
+  `summary` text NOT NULL,
+  `url` varchar(191) NOT NULL,
+  `box_color` varchar(40) NOT NULL,
+  `order` bigint unsigned NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+DROP TABLE IF EXISTS `resource_infos`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `resource_infos` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `commencement` int NOT NULL,
+  `number_of_installation` int NOT NULL,
+  `customers` int NOT NULL,
+  `team_members` int NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+DROP TABLE IF EXISTS `testimonials`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `testimonials` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `photo` varchar(191) DEFAULT NULL,
+  `client_name` varchar(191) NOT NULL,
+  `person_name` varchar(191) DEFAULT NULL,
+  `designation` varchar(191) DEFAULT NULL,
+  `message` text NOT NULL,
+  `order` bigint unsigned NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+DROP TABLE IF EXISTS `users`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `users` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(191) NOT NULL,
+  `email` varchar(191) NOT NULL,
+  `email_verified_at` timestamp NULL DEFAULT NULL,
+  `password` varchar(191) NOT NULL,
+  `photo` varchar(191) DEFAULT NULL,
+  `first_name` varchar(191) DEFAULT NULL,
+  `last_name` varchar(191) DEFAULT NULL,
+  `send_notification` tinyint(1) NOT NULL DEFAULT '0',
+  `remember_token` varchar(100) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `reserved` tinyint(1) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `users_email_unique` (`email`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+INSERT INTO `migrations` VALUES (1,'2014_10_12_000000_create_users_table',1);
+INSERT INTO `migrations` VALUES (2,'2014_10_12_100000_create_password_resets_table',1);
+INSERT INTO `migrations` VALUES (3,'2019_08_19_000000_create_failed_jobs_table',1);
+INSERT INTO `migrations` VALUES (4,'2019_12_14_000001_create_personal_access_tokens_table',1);
+INSERT INTO `migrations` VALUES (5,'2021_07_11_124143_create_company_infos_table',1);
+INSERT INTO `migrations` VALUES (6,'2021_07_31_171843_create_banners_table',1);
+INSERT INTO `migrations` VALUES (7,'2021_08_02_142845_create_resource_infos_table',1);
+INSERT INTO `migrations` VALUES (8,'2021_08_02_162433_create_market_concentrations_table',1);
+INSERT INTO `migrations` VALUES (9,'2021_08_03_130947_create_about_us_table',1);
+INSERT INTO `migrations` VALUES (10,'2021_08_03_153650_create_client_categories_table',1);
+INSERT INTO `migrations` VALUES (11,'2021_08_03_153651_create_clients_table',1);
+INSERT INTO `migrations` VALUES (12,'2021_08_03_181547_create_products_table',1);
+INSERT INTO `migrations` VALUES (13,'2021_08_03_194448_create_portfolio_categories_table',1);
+INSERT INTO `migrations` VALUES (14,'2021_08_03_233233_create_portfolios_table',1);
+INSERT INTO `migrations` VALUES (15,'2021_08_04_101117_create_testimonials_table',1);
+INSERT INTO `migrations` VALUES (16,'2021_08_04_155748_create_events_table',1);
+INSERT INTO `migrations` VALUES (17,'2021_08_05_205914_create_management_table',1);
+INSERT INTO `migrations` VALUES (18,'2021_08_06_084326_create_pages_table',1);
+INSERT INTO `migrations` VALUES (19,'2021_08_09_111237_create_menus_table',1);
+INSERT INTO `migrations` VALUES (20,'2021_08_09_145726_create_menu_items_table',1);
+INSERT INTO `migrations` VALUES (21,'2021_08_09_183910_alter_users_table',1);
+INSERT INTO `migrations` VALUES (22,'2021_08_10_131507_add_foreign_key_client_category_id_to_clients_table',1);
+INSERT INTO `migrations` VALUES (23,'2021_08_10_131508_add_foreign_key_portfolio_category_id_to_portfolios_table',1);
+INSERT INTO `migrations` VALUES (24,'2021_08_10_131800_add_foreign_key_menu_id_to_menu_items_table',1);
+INSERT INTO `migrations` VALUES (25,'2021_08_10_132305_add_foreign_key_page_id_to_menu_items_table',1);
+INSERT INTO `migrations` VALUES (26,'2021_08_11_081750_add_foreign_key_parent_id_to_menu_items_table',1);
+INSERT INTO `migrations` VALUES (27,'2021_09_01_170457_create_audits_table',1);
+INSERT INTO `migrations` VALUES (28,'2021_09_02_181433_create_email_configs_table',1);
+INSERT INTO `migrations` VALUES (29,'2021_09_03_140819_create_contacts_table',1);
+INSERT INTO `migrations` VALUES (30,'2021_09_03_150527_create_locations_table',1);
+INSERT INTO `migrations` VALUES (31,'2021_09_06_051502_insert_initial_data_to_the_system',1);
