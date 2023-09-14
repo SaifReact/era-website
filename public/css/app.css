@@ -25723,7 +25723,7 @@ section#hero {
 .breadcrumbs {
     position: sticky;
     top: 90px;
-    background: #012970;
+    background: #012e7d;
     color: #fff;
     min-height: 40px;
     padding: 15px 0;
@@ -25735,6 +25735,7 @@ section#hero {
 }
 .breadcrumbs h2 {
     font-size: 24px;
+    font-family: "Barlow";
     font-weight: 600;
 }
 .breadcrumbs ol {
@@ -26951,23 +26952,141 @@ CSS.g-6,
 /*====================Images====================*/
 
 .square-holder {
-    align-items: center;
     display: flex;
     align-items: center;
     justify-content: center;
-    min-width: 115px;
-    min-height: 35px;
 }
 
 .square-holder img {
     max-width: 100%;
     filter: grayscale(100%);
     transition: all 0.3s;
+    padding-bottom: 13px;
 }
 
 .square-holder:hover img {
     filter: none;
 }
+/* ===========================   about page   =============================== */
+.section-experiences,
+.section-awards {
+    background: #f4f4f4;
+}
+.about-counts {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+.count-card {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: #f9f9f9;
+    padding: 12px 16px;
+    width: 220px;
+    height: 100%;
+}
+.about-counts .icon {
+    font-size: 30px;
+}
+.award-card > .row {
+    height: 100%;
+}
+.award-info {
+    background-color: white;
+    padding: 35px;
+}
+.award-image {
+    background-color: #dfe1e6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@media (max-width: 992px) {
+    .about-counts {
+        justify-content: center;
+    }
+}
+.digital {
+    font-family: Barlow;
+    text-transform: Uppercase;
+    font-size: 20px;
+    font-weight: 600;
+}
+.digitaldiv {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.digitalimg {
+    flex: 1;
+    background: #ffffff;
+    text-align: center;
+    font-size: 13px;
+    font-family: "Barlow";
+    padding-top: 13px;
+    min-width: 120px;
+}
+.partner-logo {
+    flex: 1;
+    padding: 10px;
+    text-align: center;
+    margin: auto;
+}
+
+/*================Services==========================*/
+
+.service-counts {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    padding-bottom: 20px;
+}
+
+.service-card {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border: 1px solid #dadada;
+    padding: 16px;
+    width: 360px;
+    height: 100%;
+}
+.service-counts .icon {
+    font-size: 30px;
+}
+
+.service-tools {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.service-expertise {
+    flex: 1;
+    background: #ffffff;
+    padding: 13px;
+    min-width: 100px;
+    min-height: auto;
+    height: auto;
+}
+
+.service-expertise p {
+    font-size: 13px;
+    font-weight: 600;
+    font-family: "Barlow";
+}
+
+.service-expertise ul.bullet {
+    list-style-type: square;
+    font-size: 11px;
+    font-family: "Barlow";
+}
+
 .team {
     background: #fff;
     padding: 60px 0;

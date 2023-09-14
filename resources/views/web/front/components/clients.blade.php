@@ -16,7 +16,7 @@
                     <!-- <div class="swiper-wrapper d-flex align-items-center"> -->
                     @if($clientCategory->ordered_clients_count)
                     @foreach($clientCategory->orderedClients as $client)
-                    <div class="col-sm-6 col-md-4 col-lg-4">
+                    <div class="col-sm-6 col-md-4 col-lg-3">
                         <div class="square-holder">
                             @if(!empty($client->url))
                             <a href="{{ $client->url }}" target="_blank"><img src="{{ $client->logo }}"

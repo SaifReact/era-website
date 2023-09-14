@@ -17,11 +17,9 @@
 <main id="main">
     @include('web.front.partials.breadcrumb')
     <section class="inner-page">
-        <div class="container">
-            <article class="entry entry-single" data-aos="fade-up">
-                {!! $page->content !!}
-            </article>
-        </div>
+        <article class="entry entry-single" data-aos="fade-up">
+            {!! $page->content !!}
+        </article>
     </section>
 </main><!-- End #main -->
 @endsection
