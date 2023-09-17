@@ -21,8 +21,9 @@ News & Events
                                 <img src="{{ $event->thumbnail }}" alt="{{ $event->thumbnail }}" class="img-fluid">
                             </div>
                             <h2 class="entry-title">
-                                <a
-                                    href="{{ route('event-show', ['event' => $event->slug, 'item' => $item]) }}">{{ $event->title }}</a>
+                                <a href="{{ route('event-show', ['event' => $event->slug, 'item' => $item]) }}">{{ $event->title }}
+                                    <span>Hello</span>
+                                </a>
                             </h2>
                             <div class="entry-meta">
                                 <ul>

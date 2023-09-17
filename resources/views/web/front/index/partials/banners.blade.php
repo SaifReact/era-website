@@ -3,7 +3,7 @@
     <div class="hero-container">
         <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="8000">
 
-            <ol id="hero-carousel-indicators" class="carousel-indicators"></ol>
+            <!-- <ol id="hero-carousel-indicators" class="carousel-indicators"></ol> -->
 
             <div class="carousel-inner" role="listbox">
                 @foreach($banners as $key => $banner)

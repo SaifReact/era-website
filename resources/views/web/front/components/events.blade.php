@@ -1,7 +1,7 @@
 @extends('layouts.web.ajax')
 @if($events->count())
 <!-- ======= Recent Blog Posts Section ======= -->
-<section id="recent-blog-posts" class="recent-blog-posts text-start" style="background:#F6F9FF;">
+<section id="recent-blog-posts" class="recent-blog-posts text-start" style="background:#F6F9FF; padding-bottom:20px;">
     <div class="container" data-aos="fade-up">
         <header class="section-header">
             <!--  <i class="ri-file-text-line icon"

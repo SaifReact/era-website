@@ -5448,7 +5448,7 @@ fieldset:disabled .btn {
     opacity: 1;
 }
 .carousel-caption {
-    bottom: calc(50%);
+    bottom: calc(65%);
     color: #fff;
     left: 15%;
     padding-bottom: 1.25rem;
@@ -25688,6 +25688,13 @@ section {
     overflow: hidden;
     padding: 20px 0;
 }
+main#main section:last-child {
+    padding-bottom: 0;
+}
+main#main section.breadcrumbs + section {
+    margin-top: 106px;
+}
+
 section#hero {
     padding: 0;
     margin-top: 90px;
@@ -26951,17 +26958,24 @@ CSS.g-6,
 }
 /*====================Images====================*/
 
+.clints-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
 .square-holder {
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 70px;
 }
 
 .square-holder img {
     max-width: 100%;
     filter: grayscale(100%);
     transition: all 0.3s;
-    padding-bottom: 13px;
+    padding-bottom: 18px;
 }
 
 .square-holder:hover img {
@@ -27052,19 +27066,22 @@ CSS.g-6,
     align-items: center;
     gap: 15px;
     border: 1px solid #dadada;
-    padding: 16px;
+    padding: 12px;
     width: 360px;
     height: 100%;
+}
+
+.service-card span {
+    font-size: 14px;
+    font-family: "Barlow";
 }
 .service-counts .icon {
     font-size: 30px;
 }
 
 .service-tools {
-    display: flex;
+    column-count: 5;
     gap: 10px;
-    flex-wrap: wrap;
-    justify-content: center;
 }
 .service-expertise {
     flex: 1;
@@ -27073,18 +27090,45 @@ CSS.g-6,
     min-width: 100px;
     min-height: auto;
     height: auto;
+    margin-bottom: 10px;
 }
 
 .service-expertise p {
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 600;
     font-family: "Barlow";
 }
 
 .service-expertise ul.bullet {
     list-style-type: square;
-    font-size: 11px;
+    font-size: 13px;
     font-family: "Barlow";
+    page-break-inside: avoid;
+}
+.service-expertise li.list-title {
+    list-style: none;
+    font-size: 14px;
+    font-weight: 600;
+    padding-bottom: 8px;
+    margin-left: -16px;
+}
+.container-img {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 350px));
+    grid-gap: 1rem;
+}
+.container-img img {
+    background-position: top;
+    background-size: cover;
+    height: 220px;
+    width: 350px;
+    box-shadow: 0 2px 10px #000;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+.container-img img:hover {
+    box-shadow: none;
+    transform: scale(1.1);
 }
 
 .team {
@@ -27381,9 +27425,7 @@ CSS.g-6,
         transform: rotate(1turn);
     }
 }
-.blog {
-    padding: 40px 0 20px;
-}
+
 .blog .entry {
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
     margin-bottom: 60px;
