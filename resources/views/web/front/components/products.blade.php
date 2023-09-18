@@ -4,8 +4,7 @@
 <section id="services" class="services text-start" style="background:#F6F9FF;">
     <div class="container" data-aos="fade-up">
         <header class="section-header">
-            <p>Our <span style="color:#F67624">Products</sapn>
-            </p>
+            <span>Our</span> <span style="color:#F67624">Products</sapn>
         </header>
         <div class="row" style="position:relative;">
 

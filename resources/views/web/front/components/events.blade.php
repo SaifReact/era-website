@@ -4,10 +4,7 @@
 <section id="recent-blog-posts" class="recent-blog-posts text-start" style="background:#F6F9FF; padding-bottom:20px;">
     <div class="container" data-aos="fade-up">
         <header class="section-header">
-            <!--  <i class="ri-file-text-line icon"
-                   style="color: #2db6fa; background: #dbf3fe; font-size:40px; border-radius:5px; padding:15px;"></i>-->
-            <p>News & <span style="color:#F67624">Events</span>
-            </p>
+            <span>News & </span> <span style="color:#F67624">Events</span>
         </header>
 
         <div class="row">

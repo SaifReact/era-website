@@ -72,7 +72,7 @@ OUTERHTML;
         $innerHtml = '';
 
         foreach ($elements as $element) {
-            $innerHtml .= '<div class="col-lg col footer-links">';
+            $innerHtml .= '<div class="footer-links">';
             $innerHtml .= "<h4>".$element['name']."</h4>";
             $innerHtml .= $this->createElement($element);
             $innerHtml .= "</div>";

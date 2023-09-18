@@ -5,7 +5,7 @@ new Swiper(".products-slider", {
     slidesPerView: "auto",
     pagination: { el: ".swiper-pagination", type: "bullets", clickable: !0 },
     breakpoints: {
-        320: { slidesPerView: 1, spaceBetween: 40 },
+        360: { slidesPerView: 1, spaceBetween: 40 },
         992: { slidesPerView: 3, spaceBetween: 30 },
         1200: { slidesPerView: 4, spaceBetween: 30 }
     },
