@@ -1,6 +1,6 @@
 @if($marketConcentrations->count())
 <!-- ======= Recent Blog Posts Section ======= -->
-<section id="recent-blog-posts" class="recent-blog-posts" style="background: #FFFFFF;">
+<section id="market-concentration" class="market-concentration" style="background: #FFFFFF;">
     <div class="container" data-aos="fade-up">
         <div class="section-content">
             <header class="section-header">

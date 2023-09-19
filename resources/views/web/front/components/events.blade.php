@@ -10,16 +10,19 @@
         <div class="row">
             @foreach($events as $event)
             <div class="col-lg-4">
+            <a href="{{ route('event-show', ['event' => $event->slug]) }}">
                 <div class="post-box">
                     <div class="post-img"><img src="{{ $event->thumbnail }}" class="img-fluid"
                             alt="{{ $event->title }}"></div>
                     <span class="post-date">{{ ($event->publish_at) }}</span>
                     <!--<span class="post-date">{{ \Carbon\Carbon::parse($event->publish_at)->format('M d, Y') }}</span>-->
                     <h3 class="post-title">{{ $event->title }}</h3>
-                    <a href="{{ route('event-show', ['event' => $event->slug]) }}"
+                    <!-- <a href="{{ route('event-show', ['event' => $event->slug]) }}"
                         class="readmore stretched-link mt-auto"><span>Read More</span><i
-                            class="bi bi-arrow-right"></i></a>
+                            class="bi bi-arrow-right"></i> -->
+                        
                 </div>
+                </a>
             </div>
             @endforeach
         </div>

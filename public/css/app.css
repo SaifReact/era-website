@@ -32802,11 +32802,11 @@ section#hero {
     gap: 10px;
 }
 
-.recent-blog-posts .section-header {
+.market-concentration .section-header {
     flex-direction: column;
 }
 
-.recent-blog-posts .section-content {
+.market-concentration .section-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -34557,7 +34557,7 @@ CSS.g-6,
     background-color: #4154f1;
 }
 
-.recent-blog-posts .section-body {
+.market-concentration .section-body {
     display: flex;
     gap: 10px;
     width: 100%;
@@ -34585,6 +34585,7 @@ CSS.g-6,
     position: relative;
 }
 
+.market-concentration .post-boxs,
 .recent-blog-posts .post-boxs {
     display: flex;
     flex-direction: column;
@@ -34597,7 +34598,7 @@ CSS.g-6,
     height: 150px;
 }
 
-.recent-blog-posts .post-boxs .post-img {
+.market-concentration .post-boxs .post-img {
     margin: 0px;
     overflow: hidden;
     position: relative;
@@ -34606,7 +34607,7 @@ CSS.g-6,
 }
 
 .recent-blog-posts .post-box .post-img img,
-.recent-blog-posts .post-boxs .post-img img {
+.market-concentration .post-boxs .post-img img {
     transition: 0.5s;
 }
 
@@ -34620,7 +34621,7 @@ CSS.g-6,
 }
 
 .recent-blog-posts .post-box .post-title,
-.recent-blog-posts .post-boxs .post-title {
+.market-concentration .post-boxs .post-title {
     color: #012970;
     font-size: 16px;
     font-weight: 600;
@@ -34631,7 +34632,7 @@ CSS.g-6,
 }
 
 .recent-blog-posts .post-box .readmore,
-.recent-blog-posts .post-boxs .readmore {
+.market-concentration .post-boxs .readmore {
     align-items: center;
     display: flex;
     font-weight: 600;
@@ -34640,14 +34641,14 @@ CSS.g-6,
 }
 
 .recent-blog-posts .post-box .readmore i,
-.recent-blog-posts .post-boxs .readmore i {
+.market-concentration .post-boxs .readmore i {
     font-size: 18px;
     line-height: 0;
     margin-left: 4px;
 }
 
 .recent-blog-posts .post-box:hover .post-title,
-.recent-blog-posts .post-boxs:hover .post-title {
+.market-concentration .post-boxs:hover .post-title {
     color: #4154f1;
 }
 
@@ -36190,26 +36191,26 @@ CSS.g-6,
     .counts .count-box p {
         color: #585f6d;
     }
-    /* =====================   recent blog post */
-    .recent-blog-posts .section-content {
+    /* =====================  market-concentration */
+    .market-concentration .section-content {
         align-items: flex-start;
         flex-direction: column;
     }
-    .recent-blog-posts .section-header {
+    .market-concentration .section-header {
         flex-direction: row;
     }
-    .recent-blog-posts .post-boxs {
+    .market-concentration .post-boxs {
         min-width: 72px;
         height: 72px;
         padding: 0;
     }
 
-    .recent-blog-posts .post-boxs .post-img {
+    .market-concentration .post-boxs .post-img {
         height: 32px;
         width: 32px;
     }
 
-    .recent-blog-posts .post-boxs .post-title {
+    .market-concentration .post-boxs .post-title {
         font-size: 10px;
     }
     /* =============================== products */
