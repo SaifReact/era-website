@@ -181,13 +181,13 @@ address {
 
 ol,
 ul {
-    padding-left: 2rem;
+    padding-left: 1rem;
 }
 
 dl,
 ol,
 ul {
-    margin-bottom: 1rem;
+    margin-bottom: 0;
     margin-top: 0;
 }
 
@@ -32827,10 +32827,13 @@ section#hero {
     }
 }
 
-.breadcrumbs h2 {
+.breadcrumbs span {
     font-size: 24px;
     font-family: "Barlow";
     font-weight: 600;
+    border-bottom: 4px solid #f67624;
+    height: 100%;
+    width: 100%;
 }
 
 .breadcrumbs ol {
@@ -34322,7 +34325,7 @@ CSS.g-6,
 
 /* ===========================   product page   =============================== */
 .section-products {
-    padding-bottom: 20px;
+    padding-bottom: 30px;
 }
 .product-about {
     font-family: "Barlow";
@@ -34337,16 +34340,17 @@ CSS.g-6,
     background-color: #012e7d;
     color: white;
     padding: 5px 16px;
-    font-size: 14px;
-    font-weight: 600;
+    font-size: 13px;
+    font-weight: 500;
     font-family: "Barlow";
+    letter-spacing: 2px;
 }
 .btnEmail {
     border: 1px solid #dfe1e6;
     color: #585f6d;
     padding: 6px 16px;
-    font-size: 14px;
-    font-weight: 600;
+    font-size: 13px;
+    font-weight: 500;
     font-family: "Barlow";
     margin-left: 10px;
 }
@@ -34384,12 +34388,7 @@ CSS.g-6,
     font-size: 13px;
     color: #1c2330;
     line-height: 1.6;
-    padding-top: 15px;
-}
-
-.product-video .ulli {
-    font-family: "Barlow";
-    font-size: 13px;
+    padding-top: 20px;
 }
 
 .productFinance {
@@ -34397,19 +34396,57 @@ CSS.g-6,
     gap: 10px;
     flex-wrap: wrap;
     justify-content: left;
+    padding: 20px 0 0 0;
 }
 
 .productFinanceDiv {
     flex: 1;
-    border-left: 3px solid #4e82d8;
-    padding: 10px;
+    border-left: 2px solid #4e82d8;
+    padding: 0 10px;
     font-family: "Barlow";
+    width: 255px;
+    height: 135px;
+}
+
+.productFinanceDiv .heading1 {
+    text-align: left;
+    font: normal normal 600 21px/20px Barlow;
+    color: #1c2330;
+    line-height: 1.1;
+    height: 40px;
+}
+
+.productFinanceDiv .heading2 {
+    text-align: left;
+    font: normal normal 600 21px/20px Barlow;
+    color: #1c2330;
+    line-height: 1.1;
+    height: 60px;
+}
+.productFinanceDiv .para {
+    text-align: left;
+    font: normal normal normal 13px/21px Barlow;
+    letter-spacing: 0px;
+    color: #1c2330;
+    opacity: 1;
+}
+
+.productFinanceDiv .para ul li:first-child {
+    line-height: 1.4;
+    padding-bottom: 15px;
+}
+.productFinanceDiv .para ul li {
+    line-height: 1.4;
+}
+
+.productFinanceDiv .para ul.bullet {
+    list-style-type: square;
+    page-break-inside: avoid;
 }
 
 .productDiv {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
 }
 
 .productImg {
@@ -34422,6 +34459,20 @@ CSS.g-6,
     flex: 1;
     text-align: right;
     min-width: 120px;
+}
+
+.productDiv .aqua ul {
+    margin-left: 10px;
+    list-style-image: url(../cms_assets/select.png);
+    line-height: 2;
+}
+
+.productDiv .aqua ul li {
+    text-align: left;
+    font-size: 13px;
+    font-family: Barlow;
+    color: #1c2330;
+    padding-left: 6px;
 }
 
 .section-benefits {
@@ -35547,7 +35598,7 @@ CSS.g-6,
     flex-basis: 210px;
 }
 .footer .footer-top .footer-info {
-    margin-bottom: 30px;
+    margin-bottom: 0px;
 }
 
 .footer .footer-top .footer-info .logo {

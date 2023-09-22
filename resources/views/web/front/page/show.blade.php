@@ -1,4 +1,4 @@
-@extends('layouts.web.app_front_page')
+@extends('layouts.web.app_without_contact')
 @section('title')
 {{ $page->title }}
 @endsection
