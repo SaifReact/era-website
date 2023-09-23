@@ -34277,7 +34277,11 @@ CSS.g-6,
 /* ===========================   about page   =============================== */
 .section-experiences,
 .section-awards {
-    background: #f4f4f4;
+    background: #f4f7fa;
+}
+
+.section-technologies {
+    background: #012e7d;
 }
 
 .about-counts {
@@ -34585,17 +34589,72 @@ CSS.g-6,
 }
 
 .service-card span {
-    font-size: 14px;
+    font-size: 18px;
     font-family: "Barlow";
 }
 
-.service-counts .icon {
-    font-size: 30px;
+.serviceDigital {
+    text-align: center;
+    font: normal normal 600 30px/42px Barlow;
+    color: #012e7d;
+    text-transform: uppercase;
+}
+.serviceDigital span {
+    border: 1px dashed #012e7d;
+    padding: 10px 50px;
+}
+
+.serviceTechnology {
+    text-align: center;
+    font: normal normal 600 30px/42px Barlow;
+    color: #fff;
+    text-transform: uppercase;
+}
+.serviceTechnology span {
+    background: #f4f7fa1a 0% 0% no-repeat padding-box;
+    border: 1px dotted #7daee9;
+    padding: 10px 50px;
+}
+
+.service-expertiseTechnology {
+    flex: 1;
+    padding: 13px;
+    min-width: 100px;
+    min-height: auto;
+    height: auto;
+    margin-bottom: 10px;
+    background: #ffffff1a 0% 0% no-repeat padding-box;
+    box-shadow: 0px 2px 3px #0000001a;
+    border: 1px dotted #4e82d8;
+}
+
+.service-expertiseTechnology ul.bullet {
+    list-style-type: square;
+    font-size: 13px;
+    font-family: "Barlow";
+    page-break-inside: avoid;
+}
+
+.service-expertiseTechnology li {
+    list-style: none;
+    font-size: 14px;
+    margin-left: -16px;
+    color: #daeffc;
+}
+
+.service-expertiseTechnology li.list-title {
+    list-style: none;
+    font-size: 14px;
+    font-weight: 600;
+    padding-bottom: 8px;
+    margin-left: -16px;
+    color: #7daee9;
 }
 
 .service-tools {
     column-count: 5;
     gap: 10px;
+    margin-top: 15px;
 }
 
 .service-expertise {
@@ -34606,6 +34665,7 @@ CSS.g-6,
     min-height: auto;
     height: auto;
     margin-bottom: 10px;
+    border: 1px dotted #012e7d;
 }
 
 .service-expertise p {
@@ -34627,6 +34687,13 @@ CSS.g-6,
     font-weight: 600;
     padding-bottom: 8px;
     margin-left: -16px;
+}
+
+.service-expertise li {
+    list-style: none;
+    font-size: 14px;
+    margin-left: -16px;
+    color: #585f6d;
 }
 
 .container-img {
