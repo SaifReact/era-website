@@ -32831,9 +32831,19 @@ section#hero {
     font-size: 24px;
     font-family: "Barlow";
     font-weight: 600;
-    border-bottom: 4px solid #f67624;
-    height: 100%;
+    position: relative;
+}
+
+.breadcrumbs span:after {
+    content: "";
+    display: block;
+    position: absolute;
+    height: 4dvb;
     width: 100%;
+    bottom: -18px;
+    left: 0;
+    right: 0;
+    border-bottom: 4px solid #f67624;
 }
 
 .breadcrumbs ol {
@@ -36516,5 +36526,16 @@ CSS.g-6,
     }
     .footer .copyright {
         text-align: center;
+    }
+    .service-tools {
+        column-count: 3;
+        gap: 5px;
+        margin-top: 10px;
+    }
+    .serviceDigital span, .serviceTechnology span {
+        padding: 10px 15px;
+    }
+    .serviceDigital, .serviceTechnology {
+        font-size: 24px;
     }
 }
