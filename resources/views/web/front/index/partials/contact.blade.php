@@ -16,7 +16,7 @@
                 <div class="row gy-4">
                     <div class="col-md-6">
                         <div class="info-box">
-                            <i class="bi bi-geo-alt"></i>
+                        <img src="http://127.0.0.1:8000/cms_assets/icons/icon_address.png" />
                             <h3>Address</h3>
                             <p><a href="{{ $location->map_location }}" target="_blank">
                                     {{ $location->address }}</a>
@@ -27,7 +27,7 @@
                     @if($contact)
                     <div class="col-md-6">
                         <div class="info-box">
-                            <i class="bi bi-telephone"></i>
+                        <img src="http://127.0.0.1:8000/cms_assets/icons/icon_phone.png" />
                             <h3>Call Us</h3>
                             @if($companyInfo->phone)<p>{{ $companyInfo->phone }}</p>@endif
                             <p><a href="tel:{{ $contact->contact_no }}">{{ $contact->contact_no }}</a></p>
@@ -36,14 +36,14 @@
                     @endif
                     <div class="col-md-6">
                         <div class="info-box">
-                            <i class="bi bi-envelope"></i>
+                        <img src="http://127.0.0.1:8000/cms_assets/icons/icon_email.png" />
                             <h3>Email Us</h3>
                             <p><a href="mailto:{{ $companyInfo->email }}">{{ $companyInfo->email }}</a></p>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="info-box">
-                            <i class="bi bi-clock"></i>
+                        <img src="http://127.0.0.1:8000/cms_assets/icons/icon_schedule.png" />
                             <h3>Open Hours</h3>
                             <p>{{ $companyInfo->open_days }}<br>{{ $companyInfo->duration }}</p>
                         </div>

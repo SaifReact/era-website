@@ -17,21 +17,21 @@ Contact
                     @if($contacts->count())
                     <div class="row mb-4">
                         <div class="col-lg-3">
-                            <i class="bi bi-geo-alt"> </i>
+                        <img src="http://127.0.0.1:8000/cms_assets/icons/icon_address.png" />
                             @if($location)
                             <p style="font-size:14px;"> {{ $location->address }} </p>
                             @endif
                         </div>
                         <div class="col-lg-3">
-                            <i class="bi bi-telephone"></i>
+                        <img src="http://127.0.0.1:8000/cms_assets/icons/icon_phone.png" />
                             <p style="font-size:14px;">{{ $companyInfo->phone }}</p>
                         </div>
                         <div class="col-lg-3">
-                            <i class="bi bi-envelope"></i>
+                        <img src="http://127.0.0.1:8000/cms_assets/icons/icon_email.png" />
                             <p style="font-size:14px;">{{ $companyInfo->email }}</p>
                         </div>
                         <div class="col-lg-3">
-                            <i class="bi bi-stopwatch"></i>
+                        <img src="http://127.0.0.1:8000/cms_assets/icons/icon_schedule.png" />
                             <p style="font-size:14px;">{{ $companyInfo->open_days }}<br>{{ $companyInfo->duration }}
                             </p>
 

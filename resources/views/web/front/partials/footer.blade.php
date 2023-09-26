@@ -12,7 +12,7 @@
                     </a>
                     @if($location)
                     <div class="footer-info-item">
-                        <i class="bi bi-geo-alt"> </i>
+                    <img src="http://127.0.0.1:8000/cms_assets/icons/icon_address.png" />
                         <div>
                             <p style="font-size:14px;"> {{ $location->address }} </p>
                         </div>
@@ -20,7 +20,7 @@
                     @endif
                     @if($contact)
                     <div class="footer-info-item">
-                        <i class="bi bi-telephone"></i>
+                    <img src="http://127.0.0.1:8000/cms_assets/icons/icon_phone.png" />
                         <div>
                             @if($companyInfo->phone)<p>{{ $companyInfo->phone }}</p>@endif
                             <p style="font-size:14px;">{{ $contact->contact_no }}</p>
@@ -28,13 +28,13 @@
                     </div>
                     @endif
                     <div class="footer-info-item">
-                        <i class="bi bi-envelope"></i>
+                    <img src="http://127.0.0.1:8000/cms_assets/icons/icon_email.png" />
                         <div>
                             <p style="font-size:14px;">{{ $companyInfo->email }}></p>
                         </div>
                     </div>
                     <div class="footer-info-item">
-                        <i class="bi bi-stopwatch"></i>
+                    <img src="http://127.0.0.1:8000/cms_assets/icons/icon_schedule.png" />
                         <div>
                             <p style="font-size:14px;">{{ $companyInfo->open_days }}<br>{{ $companyInfo->duration }}</p>
                         </div>   
@@ -52,9 +52,8 @@
             <div class="col-lg-6">
                 <div class="copyright">
                     <div class="social-links">
-                        <a href="{{ $companyInfo->facebook }}" class="facebook"><i class="bi bi-facebook"></i></a>
-                        &nbsp;&nbsp;&nbsp;&nbsp;<a href="{{ $companyInfo->linkedin }}" class="linkedin"><i
-                                class="bi bi-linkedin bx bxl-linkedin"></i></a>
+                        <a href="{{ $companyInfo->facebook }}" class="facebook"><img src="http://127.0.0.1:8000/cms_assets/icons/icon_facebook.png" /></a>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<a href="{{ $companyInfo->linkedin }}" class="linkedin"><img src="http://127.0.0.1:8000/cms_assets/icons/icon_linkedin.png" /></a>
                     </div>
 
                 </div>
