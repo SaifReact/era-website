@@ -34356,10 +34356,12 @@ CSS.g-6,
     font-size: 13px;
     line-height: 1.6;
     padding-bottom: 10px;
-    width: 490px;
-    height: 135px;
+    max-width: 490px;
 }
-
+.button-container {
+    display: flex;
+    gap: 10px;
+}
 .btnMobile {
     background-color: #012e7d;
     color: white;
@@ -34376,7 +34378,6 @@ CSS.g-6,
     font-size: 13px;
     font-weight: 500;
     font-family: "Barlow";
-    margin-left: 10px;
 }
 .btnWatch {
     border: 1px solid #dfe1e6;
@@ -34432,21 +34433,14 @@ CSS.g-6,
     height: 135px;
 }
 
-.productFinanceDiv .heading1 {
+.productFinanceDiv .heading {
     text-align: left;
     font: normal normal 600 21px/20px Barlow;
     color: #1c2330;
     line-height: 1.1;
-    height: 40px;
+    padding-bottom: 1rem;
 }
 
-.productFinanceDiv .heading2 {
-    text-align: left;
-    font: normal normal 600 21px/20px Barlow;
-    color: #1c2330;
-    line-height: 1.1;
-    height: 60px;
-}
 .productFinanceDiv .para {
     text-align: left;
     font: normal normal normal 13px/21px Barlow;
@@ -34562,6 +34556,10 @@ CSS.g-6,
     text-transform: Uppercase;
     font-size: 36px;
     font-weight: 600;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    line-height: 1;
 }
 
 .digitaldiv {
@@ -36579,5 +36577,50 @@ CSS.g-6,
         flex: 1;
         padding: 3px;
         margin: auto;
+    }
+
+    .button-container {
+        flex-direction: column;
+    }
+    .contents,
+    .product-solution .content {
+        font-size: 28px;
+    }
+    .product-video {
+        width: unset;
+        height: unset;
+        padding: 16px;
+    }
+    .productFinance {
+        display: flex;
+        gap: 24px;
+        flex-wrap: wrap;
+        justify-content: left;
+        padding: 20px 0 0 0;
+    }
+    .productFinanceDiv {
+        flex: unset;
+        padding: 0 0 0 10px;
+        width: unset;
+        height: unset;
+    }
+    .productFinanceDiv .heading {
+        padding-bottom: 0.5rem;
+    }
+    .productFinanceDiv .para ul li:first-child {
+        padding-bottom: 4px;
+    }
+    .product-card {
+        width: 100%;
+    }
+    .product-solution {
+        padding: 15px 0;
+    }
+    .digital.digital-long {
+        flex-direction: column;
+    }
+    .digital {
+        font-size: 22px;
+        flex-direction: row;
     }
 }
