@@ -7,7 +7,6 @@
             <span>Our</span> <span style="color:#F67624">Products</sapn>
         </header>
         <div class="row" style="position:relative;">
-
             <div class="products-slider swiper-container" data-aos="fade-up" data-aos-delay="200">
                 <div class="swiper-wrapper">
                     @foreach($products as $product)

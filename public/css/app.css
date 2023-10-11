@@ -33654,29 +33654,35 @@ span.h-color {
     margin-left: 5px;
 }
 
+#recent-blog-posts .swiper-button-next:after,
+#recent-blog-posts .swiper-button-prev:after,
 #services .swiper-button-next:after,
 #services .swiper-button-prev:after {
     opacity: 0;
     height: 0;
     width: 0;
 }
-
+#recent-blog-posts .swiper-button-next i:before,
+#recent-blog-posts .swiper-button-prev i:before,
 #services .swiper-button-next i:before,
 #services .swiper-button-prev i:before {
     font-size: 36px;
     color: lightblue;
 }
-
+#recent-blog-posts .swiper-button-next:hover i:before,
+#recent-blog-posts .swiper-button-prev:hover i:before,
 #services .swiper-button-next:hover i:before,
 #services .swiper-button-prev:hover i:before {
     font-size: 36px;
     color: blue;
 }
 
+#recent-blog-posts .swiper-button-next,
 #services .swiper-button-next {
     right: -40px;
 }
 
+#recent-blog-posts .swiper-button-prev,
 #services .swiper-button-prev {
     left: -40px;
 }
