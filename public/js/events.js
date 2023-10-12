@@ -6,6 +6,7 @@ new Swiper(".events-slider", {
     pagination: { el: ".swiper-pagination", type: "bullets", clickable: !0 },
     breakpoints: {
         360: { slidesPerView: 1, spaceBetween: 40 },
+        640: { slidesPerView: 2, spaceBetween: 30 },
         992: { slidesPerView: 3, spaceBetween: 30 }
     },
     navigation: {
