@@ -7,7 +7,7 @@
             <span>News & </span> <span style="color:#F67624">Events</span>
         </header>
 
-        <div class="row" style="position:relative;">
+        <div class="row" style="position:relative; margin:0px 20px;">
             <div class="events-slider swiper-container" data-aos="fade-up" data-aos-delay="200">
                 <div class="swiper-wrapper">
                     @foreach($events as $event)

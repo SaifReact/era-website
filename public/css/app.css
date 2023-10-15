@@ -36235,13 +36235,6 @@ CSS.g-6,
     .counts .row.gy-4 {
         flex-wrap: unset;
     }
-
-    .contact .container,
-    .services .container,
-    .recent-blog-posts .container {
-        max-width: calc(100vw - 20px);
-    }
-
     .market-connections .row > * {
         width: 100%;
         max-width: 160px;
@@ -36260,12 +36253,6 @@ CSS.g-6,
         padding: 30px 15px;
         margin-top: 15px;
     }
-
-    .recent-blog-posts .row > * {
-        width: 45%;
-        padding: 0;
-    }
-
     .recent-blog-posts .row {
         gap: 20px;
     }
@@ -36435,10 +36422,9 @@ CSS.g-6,
         opacity: 1;
     }
     #hero h2 {
-        font-size: 20px;
+        font-size: 35px;
         text-transform: uppercase;
         font-weight: 500;
-        text-align: center;
     }
     .banner-image img {
         width: 100%;
@@ -36473,7 +36459,7 @@ CSS.g-6,
 
     .counts .count-box {
         height: 60px;
-        flex-basis: 155px;
+        /* flex-basis: 155px; */
         background: #f4f7fa;
         justify-content: center;
     }
@@ -36619,5 +36605,54 @@ CSS.g-6,
     .digital {
         font-size: 22px;
         flex-direction: row;
+    }
+    .footer .credits {
+        text-align: center;
+    }
+}
+
+@media (max-width: 414px) {
+    .counts {
+        padding: 10px 0;
+        margin-top: unset;
+        position: relative;
+        z-index: unset;
+    }
+
+    .conutbox-wrapper {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        height: unset;
+        min-height: unset;
+    }
+
+    .counts .count-box {
+        height: 60px;
+        flex-basis: 155px;
+        background: #f4f7fa;
+        justify-content: center;
+    }
+
+    .counts .count-box div {
+        text-align: center;
+    }
+
+    .counts .count-box span {
+        font-size: 16px;
+        color: #012e7d;
+        font-weight: bold;
+    }
+
+    .counts .count-box i {
+        display: none;
+    }
+
+    .counts .count-box p {
+        color: #585f6d;
+    }
+    .swiper-button-next,
+    .swiper-button-prev {
+        display: none;
     }
 }
