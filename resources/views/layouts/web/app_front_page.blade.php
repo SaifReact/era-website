@@ -47,11 +47,11 @@
     <div class="contact-bg-with-btn">
         <div class="container">
             <div class="row">
-                <div class="col-md-12 col-lg-6">
+                <div class="col-6">
                     <p style="padding-top:10px; font-weight: 600;">We're Here <span style="color:#f67624">to Help</span>
                     </p>
                 </div>
-                <div class="col-md-12 col-lg-6">
+                <div class="col-6">
                     <div class="d-flex justify-content-end">
                         <a href="{{ route('contact-new') }}" style="color: #FFFFFF; padding-top:10px;"><i
                                 class="bi bi-envelope" style="font-size:14px;"></i>

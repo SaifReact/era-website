@@ -22,4 +22,7 @@
         </article>
     </section>
 </main><!-- End #main -->
+@section('js')
+@parent
+<script src="{{ asset('js/awards.js') }}" defer></script>
 @endsection

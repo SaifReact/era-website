@@ -497,7 +497,6 @@ progress {
 .display-1 {
     font-size: calc(1.625rem + 4.5vw);
     font-weight: 300;
-    line-height: 1.2;
 }
 
 @media (min-width: 1200px) {
@@ -32814,6 +32813,7 @@ span.h-color {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 30px;
 }
 
 .breadcrumbs {
@@ -32823,6 +32823,7 @@ span.h-color {
     color: #fff;
     min-height: 40px;
     padding: 15px 0;
+    z-index: 100;
 }
 
 @media (max-width: 992px) {
@@ -33579,12 +33580,10 @@ span.h-color {
 }
 
 .services .service-box {
-    transition: 0.3s;
-    width: 256px;
     padding: 30px;
+    margin: 0 10px;
     box-sizing: border-box;
     text-align: center;
-    transition: 0.3s;
     background: #fff;
     border-top: 2px solid transparent;
     transition: all 0.3s ease-in-out;
@@ -33601,7 +33600,6 @@ span.h-color {
 
 .services .service-box p {
     height: 101px;
-    width: 200px;
     text-align: center;
     font-size: 14px;
     overflow: hidden;
@@ -33648,6 +33646,8 @@ span.h-color {
     margin-left: 5px;
 }
 
+.section-awards .swiper-button-next:after,
+.section-awards .swiper-button-prev:after,
 #recent-blog-posts .swiper-button-next:after,
 #recent-blog-posts .swiper-button-prev:after,
 #services .swiper-button-next:after,
@@ -33656,6 +33656,8 @@ span.h-color {
     height: 0;
     width: 0;
 }
+.section-awards .swiper-button-next i:before,
+.section-awards .swiper-button-prev i:before,
 #recent-blog-posts .swiper-button-next i:before,
 #recent-blog-posts .swiper-button-prev i:before,
 #services .swiper-button-next i:before,
@@ -33663,6 +33665,9 @@ span.h-color {
     font-size: 36px;
     color: lightblue;
 }
+
+.section-awards .swiper-button-next:hover i:before,
+.section-awards .swiper-button-prev:hover i:before,
 #recent-blog-posts .swiper-button-next:hover i:before,
 #recent-blog-posts .swiper-button-prev:hover i:before,
 #services .swiper-button-next:hover i:before,
@@ -33671,11 +33676,13 @@ span.h-color {
     color: blue;
 }
 
+.section-awards .swiper-button-next,
 #recent-blog-posts .swiper-button-next,
 #services .swiper-button-next {
     right: -40px;
 }
 
+.section-awards .swiper-button-prev,
 #recent-blog-posts .swiper-button-prev,
 #services .swiper-button-prev {
     left: -40px;
@@ -34892,8 +34899,9 @@ CSS.g-6,
     gap: 10px;
     transition: 0.3s;
     border: 1px solid #dadada;
-    width: 170px;
+    flex-basis: 150px;
     height: 150px;
+    flex: 1;
 }
 
 .market-concentration .post-boxs .post-img {
@@ -36193,6 +36201,9 @@ CSS.g-6,
     .row {
         justify-content: center;
     }
+    .contact-bg-with-btn .row {
+        justify-content: space-between;
+    }
 
     .counts .row > * {
         width: unset;
@@ -36223,7 +36234,7 @@ CSS.g-6,
 
     .services .service-box {
         max-width: 90vw;
-        margin: 0 auto;
+        margin: 0 10px;
     }
 
     .contact-bg-with-btn .row > * {
@@ -36420,6 +36431,7 @@ CSS.g-6,
 @media (max-width: 768px) {
     .header {
         opacity: 1;
+        padding: 15px 0;
     }
     #hero h2 {
         font-size: 35px;
@@ -36483,11 +36495,7 @@ CSS.g-6,
     }
     /* =====================  market-concentration */
     .market-concentration .section-content {
-        align-items: flex-start;
-        flex-direction: column;
-    }
-    .market-concentration .section-header {
-        flex-direction: row;
+        gap: 0;
     }
     .market-concentration .post-boxs {
         min-width: 72px;
@@ -36506,6 +36514,7 @@ CSS.g-6,
     /* =============================== products */
     .services .service-box {
         padding: 20px;
+        margin: 0 10px;
     }
     .services .service-box h3 {
         font-size: 16px;
@@ -36524,6 +36533,7 @@ CSS.g-6,
     .footer .footer-top .footer-links {
         display: none;
     }
+
     .footer .copyright {
         text-align: center;
     }
@@ -36611,48 +36621,36 @@ CSS.g-6,
     }
 }
 
+@media (max-width: 768px) and (orientation: landscape) {
+    .footer .footer-links:nth-child(1) {
+        display: block;
+        max-width: 115px;
+    }
+}
+
 @media (max-width: 414px) {
-    .counts {
-        padding: 10px 0;
-        margin-top: unset;
-        position: relative;
-        z-index: unset;
-    }
-
-    .conutbox-wrapper {
-        display: flex;
-        gap: 10px;
-        flex-wrap: wrap;
-        height: unset;
-        min-height: unset;
-    }
-
     .counts .count-box {
-        height: 60px;
         flex-basis: 155px;
-        background: #f4f7fa;
-        justify-content: center;
-    }
-
-    .counts .count-box div {
-        text-align: center;
-    }
-
-    .counts .count-box span {
-        font-size: 16px;
-        color: #012e7d;
-        font-weight: bold;
-    }
-
-    .counts .count-box i {
-        display: none;
-    }
-
-    .counts .count-box p {
-        color: #585f6d;
     }
     .swiper-button-next,
     .swiper-button-prev {
         display: none;
+    }
+}
+
+@media (max-width: 1199px) {
+    .market-concentration .post-boxs {
+        width: 150px;
+    }
+}
+
+@media (max-width: 991px) {
+    .market-concentration .section-content {
+        flex-wrap: wrap;
+    }
+    .market-concentration .section-header {
+        flex-direction: row;
+        margin-bottom: 0;
+        gap: 15px;
     }
 }
