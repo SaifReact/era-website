@@ -32977,7 +32977,6 @@ span.h-color {
 
 .header {
     background-color: #fff;
-    opacity: 0.9;
     padding: 15px 0 15px 0;
     transition: all 0.5s;
     z-index: 997;
@@ -35897,7 +35896,7 @@ CSS.g-6,
     }
 
     .header.header-scrolled {
-        padding: 15px;
+        padding: 15px 0;
     }
 
     .contact .info > .col-md-6 {
@@ -36337,7 +36336,6 @@ CSS.g-6,
 /* ========================================================  for mobile view  =========================== */
 @media (max-width: 768px) {
     .header {
-        opacity: 1;
         padding: 15px 0;
     }
     #hero h2 {
@@ -36462,7 +36460,7 @@ CSS.g-6,
         gap: 10px;
         background: #f9f9f9;
         padding: 10px 10px;
-        width: 160px;
+        width: 180px;
         height: 100%;
     }
     .count-card .icon {
@@ -36510,6 +36508,9 @@ CSS.g-6,
     .productFinanceDiv .para ul li:first-child {
         padding-bottom: 4px;
     }
+    .product-boxs {
+        justify-content: center;
+    }
     .product-card {
         width: 100%;
     }
@@ -36520,7 +36521,7 @@ CSS.g-6,
         flex-direction: column;
     }
     .digital {
-        font-size: 22px;
+        font-size: 25px;
         flex-direction: row;
     }
     .footer .credits {
@@ -36538,13 +36539,17 @@ CSS.g-6,
     }
 }
 
-@media (max-width: 414px) {
+@media (max-width: 414px) and (orientation: portrait) {
     .counts .count-box {
         flex-basis: 155px;
     }
     .swiper-button-next,
     .swiper-button-prev {
         display: none;
+    }
+    .product-card {
+        width: 100%;
+        max-width: 185px;
     }
 }
 
