@@ -36455,7 +36455,7 @@ CSS.g-6,
     .serviceTechnology {
         font-size: 24px;
     }
-    .count-card {
+    .conutbox-wrapper .count-card {
         justify-content: center;
         gap: 10px;
         background: #f9f9f9;
@@ -36463,10 +36463,25 @@ CSS.g-6,
         width: 180px;
         height: 100%;
     }
-    .count-card .icon {
+    .conutbox-wrapper .count-card .icon {
         display: none;
     }
-    .count-card .content {
+    .conutbox-wrapper .count-card .content {
+        text-align: center;
+        font-size: 15px;
+    }
+    .about-counts .count-card {
+        justify-content: center;
+        gap: 10px;
+        background: #f9f9f9;
+        padding: 10px 10px;
+        width: 180px;
+        height: 100%;
+    }
+    .about-counts .count-card .icon {
+        display: none;
+    }
+    .about-counts .count-card .content {
         text-align: center;
         font-size: 15px;
     }
@@ -36539,20 +36554,6 @@ CSS.g-6,
     }
 }
 
-@media (max-width: 414px) and (orientation: portrait) {
-    .counts .count-box {
-        flex-basis: 155px;
-    }
-    .swiper-button-next,
-    .swiper-button-prev {
-        display: none;
-    }
-    .product-card {
-        width: 100%;
-        max-width: 185px;
-    }
-}
-
 @media (max-width: 1199px) {
     .market-concentration .post-boxs {
         width: 150px;
@@ -36567,5 +36568,37 @@ CSS.g-6,
         flex-direction: row;
         margin-bottom: 0;
         gap: 15px;
+    }
+    .about-counts .count-card {
+        min-width: 230px;
+    }
+
+    .digital {
+        font-size: 30px;
+        flex-direction: row;
+    }
+}
+@media (max-width: 414px) and (orientation: portrait) {
+    .counts .count-box {
+        flex-basis: 155px;
+    }
+    .swiper-button-next,
+    .swiper-button-prev {
+        display: none;
+    }
+    .product-card {
+        width: 100%;
+        max-width: 185px;
+    }
+    .count-card {
+        min-width: 140px;
+        flex: 1;
+    }
+    .about-counts .count-card {
+        min-width: 165px;
+    }
+    .digital {
+        font-size: 22px;
+        flex-direction: row;
     }
 }
