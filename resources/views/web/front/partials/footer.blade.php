@@ -12,7 +12,11 @@
                     </a>
                     @if($location)
                     <div class="footer-info-item">
+<<<<<<< Updated upstream
                     <img src="http://127.0.0.1:8000/cms_assets/icons/icon_address.png" />
+=======
+                        <i class="bi bi-geo-alt"> </i>
+>>>>>>> Stashed changes
                         <div>
                             <p style="font-size:14px;"> {{ $location->address }} </p>
                         </div>
@@ -20,7 +24,11 @@
                     @endif
                     @if($contact)
                     <div class="footer-info-item">
+<<<<<<< Updated upstream
                     <img src="http://127.0.0.1:8000/cms_assets/icons/icon_phone.png" />
+=======
+                        <i class="bi bi-telephone"></i>
+>>>>>>> Stashed changes
                         <div>
                             @if($companyInfo->phone)<p>{{ $companyInfo->phone }}</p>@endif
                             <p style="font-size:14px;">{{ $contact->contact_no }}</p>
@@ -28,13 +36,21 @@
                     </div>
                     @endif
                     <div class="footer-info-item">
+<<<<<<< Updated upstream
                     <img src="http://127.0.0.1:8000/cms_assets/icons/icon_email.png" />
+=======
+                        <i class="bi bi-envelope"></i>
+>>>>>>> Stashed changes
                         <div>
                             <p style="font-size:14px;">{{ $companyInfo->email }}></p>
                         </div>
                     </div>
                     <div class="footer-info-item">
+<<<<<<< Updated upstream
                     <img src="http://127.0.0.1:8000/cms_assets/icons/icon_schedule.png" />
+=======
+                        <i class="bi bi-stopwatch"></i>
+>>>>>>> Stashed changes
                         <div>
                             <p style="font-size:14px;">{{ $companyInfo->open_days }}<br>{{ $companyInfo->duration }}</p>
                         </div>   
