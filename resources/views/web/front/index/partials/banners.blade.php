@@ -1,7 +1,7 @@
 @if($banners->count())
 <section id="hero">
     <div class="hero-container">
-        <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="1000">
+        <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
         <!-- <div> -->
 
             <!-- <ol id="hero-carousel-indicators" class="carousel-indicators"></ol> -->
