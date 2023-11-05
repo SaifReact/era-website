@@ -27,13 +27,13 @@ Welcome!
 
     <div class="container" data-aos="fade-up">
         <div class="row">
-            <div class="col-lg-6">
-                <!-- <div id="front-testimonials" class="ajax-lazy text-center" data-loader="ajax"
+            <!--<div class="col-lg-6">
+                 <div id="front-testimonials" class="ajax-lazy text-center" data-loader="ajax"
                     data-src="{{ route('front.components.testimonials') }}">
                     @include('web.front.partials.ajax-loader-block')
-                </div> -->
-            </div>
-            <div class="col-lg-6">
+                </div> 
+            </div>-->
+            <div class="col-lg-12">
                 <div id="front-clients" class="ajax-lazy text-center" data-loader="ajax"
                     data-src="{{ route('front.components.clients') }}">
                     @include('web.front.partials.ajax-loader-block')
